@@ -2,21 +2,17 @@
 	<h2>VERIFIQUE SU DOCUMENTACION ANTES DEL ENVIO</h2>
 	<div class="cuerpoP2F1c">
 		<div class="img_documento">
-			<img src="<?php echo $ci ?>">
-			<div class="sombra"><p>CI</p></div>
+			<img src="<?php echo $primero ?>">
+			<div class="sombra"><p>Documentos Primera Materia</p></div>
 		</div>
-		<div class="img_documento">
-			<img src="<?php echo $habilitacion ?>">
-			<div class="sombra"><p>Certificado Habilitación</p></div>
-		</div>
-		<div class="img_documento">
-			<img src="<?php echo $nacimiento ?>">
-			<div class="sombra"><p>Certificado Nacimiento</p></div>
-		</div>
-		<div class="img_documento">
-			<img src="<?php echo $bachiller ?>">
-			<div class="sombra"><p>Titulo Bachiller</p></div>
-		</div>
+		<?php
+		if(!$segundo){
+			echo "<div class='img_documento'>";
+			echo "<img src='$segundo'>";
+			echo "<div class='sombra'><p>Documentos Segunda Materia</p></div>";
+			echo "</div>";
+		}
+		?>
 	</div>
 	<div class="cuerpoP2F1d">
 		<label for="nombre">Nombre</label>

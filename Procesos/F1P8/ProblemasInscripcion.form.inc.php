@@ -1,29 +1,13 @@
-<div class="cuerpoP8F1">
-	<h2>EMPEZAR INSCRIPCION</h2>
-	<div class="materias">
-		<?php
-		while ($materia = mysqli_fetch_array($materias)) {
-			$sigla = $materia['sigla'];
-			$nom_materia = $materia['nombremateria'];
-			$paralelos = mysqli_query($con, "SELECT * FROM paralelo WHERE sigla = '$sigla';");
-			echo "<h3>$nom_materia ($sigla)</h3>";
-			echo "<div class='cont_paralelos'>";
-			while ($paralelo = mysqli_fetch_array($paralelos)) {
-				$par = $paralelo['paralelo'];
-				$docente = $paralelo['docente'];
-				$horario = $paralelo['Horario'];
-				echo "<label for='$sigla$par' class='paralelos'>";
-				echo "<input type='radio' id='$sigla$par' name='$sigla' class='cmaterias' value='$par'>";
-				echo "<h4>$docente ($par)</h4>";
-				echo "<p>$horario</p>";
-				echo "</label>";
-			}
-			echo "</div>";
-			$paralelos = mysqli_query($con, "SELECT * FROM paralelo WHERE sigla = '$sigla';");
-			if(! mysqli_fetch_array($paralelos)) {
-				echo "<p>No se tienen paralelos</p>";
-			}
-		}
-		?>
+<div class="cuerpoP2F1">
+	<h2>INSCRIPCION NO REALIZADA</h2>
+	<div class="cuerpoP2F1d">
+		<label for="nombre">Nombre</label>
+		<input type="text" name="nombre" id="nombre" value="<?php echo $nombre ?>" disabled>
+		<label for="usuario">CI</label>
+		<input type="text" name="usuario" id="usuario" value="<?php echo $usuario ?>" disabled>
+	</div>
+	<div class="observacion doc-negado">
+		<label for="area">Observacion</label>
+		<textarea name="area" id="area" disabled><?php echo $observacion ?></textarea>
 	</div>
 </div>

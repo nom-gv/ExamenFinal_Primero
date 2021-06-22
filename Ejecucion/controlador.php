@@ -16,7 +16,6 @@ include "../Procesos/".$flujo.$proceso."/".$formularioP.".controlador.form.inc.p
 date_default_timezone_set("America/La_Paz");
 	$momento = date("Y-m-d H:i:s");	
 
-
 if (isset($_POST["Continuar"])) {
 	$consulta = "select * from flujo where flujo = '$flujo' and proceso = '$proceso'";
 	$resultado = mysqli_query($con, $consulta);
@@ -83,5 +82,4 @@ else {
 	else 
 		header('Location: bandeja.php');
 }
-
 ?>
